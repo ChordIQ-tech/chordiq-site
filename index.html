@@ -626,6 +626,61 @@
         </div>
       </details>
 
+      <details class="case">
+        <summary>
+          <div class="thumb"><img src="img/self_healing.jpg" alt=""></div>
+          <div class="mid">
+            <p class="eyebrow" style="margin-bottom:.2rem">Equipes de ciência de dados &middot; operação de modelos de IA</p>
+            <h3>Copiloto de treino diagnostica e corrige um modelo quebrado sozinho</h3>
+            <p class="sum">Uma rede neural informada por física, lançada com uma configuração ruim, é diagnosticada e corrigida automaticamente em 4 rodadas, sem intervenção humana.</p>
+            <div class="stats">
+              <div class="stat"><b>100%&rarr;5%</b><span>erro real contra a solução exata, em 4 rodadas</span></div>
+              <div class="stat"><b>17s</b><span>tempo total de diagnóstico e correção, em CPU</span></div>
+            </div>
+          </div>
+          <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+        </summary>
+        <div class="detail">
+          <div class="pad"></div>
+          <p class="txt">A rodada 0 não aprende nada, 100% de erro contra a solução exata de
+            um problema de Poisson com resposta conhecida. Um diagnosticador automático lê
+            o histórico de perda, classifica a causa (plateau, oscilação, desequilíbrio entre
+            física e condição de contorno) e propõe o próximo ajuste de configuração. Quatro
+            rodadas depois, sem nenhuma intervenção humana, o erro real cai para
+            <strong>5%</strong>, uma redução de <strong>20×</strong>. É a mesma lógica, em
+            escala, por trás do nosso serviço de copiloto operacional: memória de episódios
+            passados guiando a próxima decisão, com confiança explícita sobre o que mudou.</p>
+        </div>
+      </details>
+
+      <details class="case">
+        <summary>
+          <div class="thumb"><img src="img/crash_surrogate.jpg" alt=""></div>
+          <div class="mid">
+            <p class="eyebrow" style="margin-bottom:.2rem">Automotivo &middot; estruturas &middot; segurança veicular</p>
+            <h3>Intervalo de confiança de um substituto de colisão bate a meta estatística</h3>
+            <p class="sum">Substituto de absorção de energia em colisão, transferido entre programas de veículo, com intervalos de predição que realmente cobrem o que prometem.</p>
+            <div class="stats">
+              <div class="stat"><b>1,7&ndash;2,5%</b><span>erro após transferência SUV &rarr; sedã</span></div>
+              <div class="stat"><b>94&ndash;100%</b><span>cobertura real dos intervalos de 90% prometidos</span></div>
+            </div>
+          </div>
+          <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+        </summary>
+        <div class="detail">
+          <div class="pad"></div>
+          <p class="txt">Um substituto treinado na física de colapso progressivo de tubos de
+            parede fina (modelo de Abramowicz&ndash;Jones) para um programa de SUV generaliza
+            mal para um sedã sem ajuste (erro de 17&ndash;32%, o esperado quando o regime
+            muda), mas depois de um ajuste fino por transferência com 180 amostras do sedã,
+            o erro cai para <strong>1,7&ndash;2,5%</strong>. Mais importante: os intervalos de
+            predição de 90% construídos por predição conforme <em>realmente cobrem</em> o
+            valor real entre 94% e 100% das vezes, não um número de confiança inventado — a
+            mesma honestidade estatística que aplicamos em qualquer verificação antes de uma
+            decisão de engenharia.</p>
+        </div>
+      </details>
+
     </div>
   </div>
 </section>

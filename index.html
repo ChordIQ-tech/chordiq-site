@@ -549,6 +549,83 @@
         </div>
       </details>
 
+      <details class="case">
+        <summary>
+          <div class="thumb"><img src="img/automotive_aero.jpg" alt=""></div>
+          <div class="mid">
+            <p class="eyebrow" style="margin-bottom:.2rem">Automotivo &middot; aerodinâmica &middot; P&amp;D</p>
+            <h3>Gêmeo digital de aerodinâmica veicular responde em milissegundos</h3>
+            <p class="sum">10 simulações reais em OpenFOAM (simpleFoam) de uma silhueta de carro, reduzidas por POD e aprendidas por um substituto, viram um gêmeo digital interativo.</p>
+            <div class="stats">
+              <div class="stat"><b>0,05%</b><span>erro do campo de velocidade vs. OpenFOAM</span></div>
+              <div class="stat"><b>1,3%</b><span>erro médio nos coeficientes (Cd, Cl, velocidade)</span></div>
+            </div>
+          </div>
+          <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+        </summary>
+        <div class="detail">
+          <div class="pad"></div>
+          <p class="txt">Dez rodadas reais de OpenFOAM entre 12 e 48 m/s de vento relativo,
+            reduzidas a 6 modos POD (0,006% de erro de reconstrução) e aprendidas por um
+            substituto que prevê o campo completo de velocidade e os coeficientes
+            aerodinâmicos (Cd, Cl) a partir de qualquer velocidade intermediária, nunca vista
+            no treino. O Cd previsto segue a curva real captada pelo próprio
+            <code>forceCoeffs</code> do OpenFOAM, incluindo a inflexão acima de 44 m/s, com
+            <strong>0,17% de erro</strong> especificamente no Cd.</p>
+        </div>
+      </details>
+
+      <details class="case">
+        <summary>
+          <div class="thumb"><img src="img/wind_turbine.jpg" alt=""></div>
+          <div class="mid">
+            <p class="eyebrow" style="margin-bottom:.2rem">Energia eólica &middot; turbomáquinas</p>
+            <h3>Gêmeo digital de rotor eólico prevê esteira, empuxo e torque</h3>
+            <p class="sum">9 simulações reais de um rotor por disco atuador em OpenFOAM, cobrindo de 200 a 2.300 RPM, aprendidas por um substituto que prevê o campo de esteira e os três escalares operacionais.</p>
+            <div class="stats">
+              <div class="stat"><b>0,24%</b><span>erro do campo de esteira vs. OpenFOAM</span></div>
+              <div class="stat"><b>0,9%</b><span>erro médio em empuxo, potência e torque</span></div>
+            </div>
+          </div>
+          <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+        </summary>
+        <div class="detail">
+          <div class="pad"></div>
+          <p class="txt">Nove rodadas reais do caso de rotor por disco atuador do OpenFOAM
+            (modelo de momento de elemento de pá, malha única reaproveitada), cada uma só
+            variando a rotação. Empuxo, potência e torque vêm da teoria de momento de disco
+            atuador aplicada à esteira resolvida de verdade, não de um escritor nativo do
+            solver. O substituto reproduz tanto o campo de esteira quanto os três escalares
+            com menos de 1% de erro médio, em qualquer rotação entre os pontos simulados.</p>
+        </div>
+      </details>
+
+      <details class="case">
+        <summary>
+          <div class="thumb"><img src="img/mixing_tank.jpg" alt=""></div>
+          <div class="mid">
+            <p class="eyebrow" style="margin-bottom:.2rem">Processos químicos &middot; farmacêutica &middot; mistura industrial</p>
+            <h3>Gêmeo digital de tanque agitado acerta a lei de escala física conhecida</h3>
+            <p class="sum">10 simulações reais em OpenFOAM (MRF) de um tanque agitado, cobrindo de 15 a 190 rad/s, com o substituto recuperando a física conhecida de potência vs. rotação.</p>
+            <div class="stats">
+              <div class="stat"><b>0,01%</b><span>erro do campo de velocidade vs. OpenFOAM</span></div>
+              <div class="stat"><b>1,9%</b><span>erro médio nos escalares (potência, Re, TKE)</span></div>
+            </div>
+          </div>
+          <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+        </summary>
+        <div class="detail">
+          <div class="pad"></div>
+          <p class="txt">Dez rodadas reais de OpenFOAM com referencial móvel (MRF) de um
+            tanque agitado, de 15 a 190 rad/s de rotação do impelidor. Fisicamente, a
+            varredura recupera <code>potência &prop; &omega;^2,7</code>, muito próximo da lei
+            clássica de tanques agitados turbulentos (P &prop; &rho;N&sup3;D&#8309;), um sinal
+            de que o substituto aprendeu a física real do problema, não só a interpolar
+            pontos. O campo de velocidade previsto reproduz até a esteira de cada uma das 4
+            pás do impelidor, com 0,01% de erro.</p>
+        </div>
+      </details>
+
     </div>
   </div>
 </section>

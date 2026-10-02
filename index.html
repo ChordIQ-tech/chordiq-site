@@ -466,6 +466,61 @@
         </div>
       </details>
 
+      <details class="case">
+        <summary>
+          <div class="thumb"><img src="img/flowtrace_vortex.jpg" alt=""></div>
+          <div class="mid">
+            <p class="eyebrow" style="margin-bottom:.2rem">Laboratório de fluidos &middot; túnel de vento &middot; P&amp;D</p>
+            <h3>PIV por software recupera um campo de vórtice com 3,9% de erro</h3>
+            <p class="sum">Par de imagens sintéticas de partículas, campo de vórtice com solução analítica exata, processado pelo mesmo algoritmo de correlação cruzada que roda em produção.</p>
+            <div class="stats">
+              <div class="stat"><b>3,94%</b><span>erro relativo médio vs. campo analítico exato</span></div>
+              <div class="stat"><b>81</b><span>vetores de velocidade recuperados numa única passada</span></div>
+            </div>
+          </div>
+          <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+        </summary>
+        <div class="detail">
+          <div class="pad"></div>
+          <p class="txt">Cada partícula sintética foi deslocada pela matriz de rotação exata
+            de um vórtice de corpo rígido, não por uma aproximação de imagem, então a
+            referência não carrega erro de discretização próprio. Rodando o algoritmo real
+            de correlação cruzada (o mesmo que atende o endpoint de produção) sobre o par de
+            imagens, os vetores recuperados reproduzem a estrutura rotacional do escoamento
+            com <strong>3,94% de erro médio</strong> e <strong>16% no pior ponto</strong>
+            (perto do centro do vórtice, onde a velocidade real tende a zero) — sem hardware
+            de câmera, laser ou software proprietário, apenas vídeo e processamento.</p>
+        </div>
+      </details>
+
+      <details class="case">
+        <summary>
+          <div class="thumb"><img src="img/surrogate_speed_rerun.jpg" alt=""></div>
+          <div class="mid">
+            <p class="eyebrow" style="margin-bottom:.2rem">Eletrônica de potência &middot; otimização térmica &middot; engenharia de produto</p>
+            <h3>Modelo substituto bate simulação 3D real 227.000× mais rápido</h3>
+            <p class="sum">Rede neural treinada prevê a temperatura de junção de um dissipador em microssegundos, conferida a cada rodada contra uma simulação 3D real em FEniCS.</p>
+            <div class="stats">
+              <div class="stat"><b>227.059&times;</b><span>mais rápido que a simulação 3D real, em média</span></div>
+              <div class="stat"><b>4,46%</b><span>erro médio de temperatura vs. FEA 3D (pior caso: 7,35%)</span></div>
+            </div>
+          </div>
+          <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+        </summary>
+        <div class="detail">
+          <div class="pad"></div>
+          <p class="txt">Sete geometrias de dissipador real e significativamente diferentes
+            entre si (aletas densas, esparsas, altas, curtas, alta e baixa potência), cada uma
+            conferida contra uma simulação 3D de elementos finitos de verdade (dolfinx/
+            FEniCS, malha via gmsh), não contra outro modelo de IA. O substituto respondeu
+            em microssegundos onde a simulação real levou de 0,6 a 5,9 segundos, com erro de
+            temperatura dentro de 10% em todos os 7 casos. Essa mesma rodada foi repetida
+            três vezes em dias diferentes: a previsão de temperatura é determinística
+            (4,46%/7,35% idênticos todas as vezes), só o fator de aceleração muda com a
+            carga da máquina no momento do teste.</p>
+        </div>
+      </details>
+
     </div>
   </div>
 </section>

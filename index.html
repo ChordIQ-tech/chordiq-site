@@ -521,6 +521,34 @@
         </div>
       </details>
 
+      <details class="case">
+        <summary>
+          <div class="thumb"><img src="img/meshbridge_repair.jpg" alt=""></div>
+          <div class="mid">
+            <p class="eyebrow" style="margin-bottom:.2rem">CAD/CAE &middot; interoperabilidade &middot; engenharia de dados</p>
+            <h3>Conversor de malha remove 100% dos defeitos de uma exportação legada</h3>
+            <p class="sum">Malha com defeitos típicos de exportação legada (faces duplicadas, degeneradas, normais invertidas) processada pelo endpoint real de conversão e reparo.</p>
+            <div class="stats">
+              <div class="stat"><b>25/25</b><span>faces defeituosas removidas (duplicadas + degeneradas)</span></div>
+              <div class="stat"><b>100%</b><span>normais consistentes após o reparo</span></div>
+            </div>
+          </div>
+          <div class="status"><span class="pill pill-ok">Validado</span><span class="toggle-ico">detalhe &darr;</span></div>
+        </summary>
+        <div class="detail">
+          <div class="pad"></div>
+          <p class="txt">Uma malha real foi deliberadamente danificada do jeito que
+            exportações legadas de CFD/CAD costumam vir: 15 faces duplicadas exatas, 10
+            faces degeneradas (área zero) e 20 faces com normais invertidas. Rodando pelo
+            endpoint HTTP real de conversão, com reparo ativado, o resultado ficou com
+            <strong>zero faces duplicadas, zero degeneradas e normais consistentes</strong> —
+            as três verificações passando contra o endpoint de produção, não uma simulação
+            isolada. Nota honesta: o reparo automático hoje não preenche buracos por
+            padrão, só remove duplicatas/degeneradas e corrige normais — o que está no ar
+            é exatamente isso, nada além.</p>
+        </div>
+      </details>
+
     </div>
   </div>
 </section>

@@ -307,3 +307,36 @@ footer .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wr
 .sector-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.6rem; }
 .sector-tag { font-family: var(--f-mono); font-size: 0.76rem; color: var(--on-surface); border: 1px solid var(--hairline);
   border-radius: 999px; padding: 0.4rem 0.85rem; background: var(--surface-2); }
+
+/* problema / solucao + pipeline */
+.problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; margin-top: 0.5rem; }
+@media (max-width: 760px) { .problem-grid { grid-template-columns: 1fr; } }
+.problem-card { border: 1px solid var(--hairline); border-radius: 14px; background: var(--surface-2); padding: 1.4rem 1.5rem; }
+.problem-card .card-k { display: block; margin-bottom: 0.5rem; }
+.problem-card p { margin: 0; font-size: 1.02rem; color: var(--on-surface); }
+.solution-line { margin-top: 1.8rem; font-size: clamp(1.2rem, 2.6vw, 1.6rem); font-weight: 700;
+  letter-spacing: -0.01em; }
+.solution-line .pos { color: var(--accent); }
+.pipeline { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-top: 1.8rem; }
+.pipeline .node { font-family: var(--f-mono); font-size: 0.82rem; border: 1px solid var(--hairline);
+  border-radius: 999px; padding: 0.5rem 1rem; background: var(--surface-2); color: var(--on-surface); }
+.pipeline .arrow { color: var(--on-surface-dim); font-family: var(--f-mono); }
+
+/* principio + citacao em destaque */
+.principle-quote { margin-top: 2.2rem; border: 1px solid var(--hairline); border-radius: 16px;
+  background: var(--surface-2); padding: 2rem 2.2rem; position: relative; overflow: hidden; }
+.principle-quote::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--accent); }
+.principle-quote .card-k { display: block; margin-bottom: 0.6rem; }
+.principle-quote h3 { font-size: clamp(1.25rem, 2.6vw, 1.7rem); max-width: 28ch; margin-bottom: 0.9rem; }
+.principle-quote p { color: var(--on-surface-dim); font-size: 1rem; max-width: 62ch; margin: 0 0 0.9rem; }
+.principle-quote p:last-child { margin-bottom: 0; }
+.principle-quote .bold-line { color: var(--on-surface); font-weight: 600; }
+
+/* ver mais casos (details aninhado) */
+.mais-casos { margin-top: 1.3rem; }
+.mais-casos > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center;
+  gap: 0.5rem; font-weight: 600; font-size: 0.94rem; color: var(--accent); padding: 0.6rem 0; }
+.mais-casos > summary::-webkit-details-marker { display: none; }
+.mais-casos > summary::after { content: "\2192"; transition: transform .2s ease; }
+.mais-casos[open] > summary::after { transform: rotate(90deg); }
+.mais-casos > .case-list { margin-top: 1.1rem; }
